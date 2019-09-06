@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: fa8421814b1594bb99261acb9963b009
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7621244327755752613
+    second: pikach2_0
+  - first:
+      213: -699783037090898148
+    second: pikach2_1
+  - first:
+      213: 3592514079644903973
+    second: pikach2_2
+  - first:
+      213: -128091570254955545
+    second: pikach2_3
+  - first:
+      213: 8052626369499198301
+    second: pikach2_4
+  - first:
+      213: -2894719049141850006
+    second: pikach2_5
+  - first:
+      213: 3969538700337255333
+    second: pikach2_6
+  - first:
+      213: 7755585035252140817
+    second: pikach2_7
+  - first:
+      213: -1261529653564102730
+    second: pikach2_8
+  - first:
+      213: -4549441844575263298
+    second: pikach2_9
+  - first:
+      213: -1405768311950822408
+    second: pikach2_10
+  - first:
+      213: 2321042869746797278
+    second: pikach2_11
+  - first:
+      213: -1139466241702822364
+    second: pikach2_12
+  - first:
+      213: -7128596291921328029
+    second: pikach2_13
+  - first:
+      213: -7999219372036533806
+    second: pikach2_14
+  - first:
+      213: 8011300240832774034
+    second: pikach2_15
+  - first:
+      213: -4662373304774969015
+    second: pikach2_16
+  - first:
+      213: 4507751071943785561
+    second: pikach2_17
+  - first:
+      213: 1812896750986835884
+    second: pikach2_18
+  - first:
+      213: -3800044114866627629
+    second: pikach2_19
+  - first:
+      213: 4195964151523868875
+    second: pikach2_20
+  - first:
+      213: 7021862366119731308
+    second: pikach2_21
+  - first:
+      213: 8000012977788098287
+    second: pikach2_22
+  - first:
+      213: -5152332327923064261
+    second: pikach2_23
+  - first:
+      213: 5747544123694384353
+    second: pikach2_24
+  - first:
+      213: -8549627297100809624
+    second: pikach2_25
+  - first:
+      213: -5765707826750192950
+    second: pikach2_26
+  - first:
+      213: 5823984278977727384
+    second: pikach2_27
+  - first:
+      213: -7928719356081052257
+    second: pikach2_28
+  - first:
+      213: -8475174087827103104
+    second: pikach2_29
+  - first:
+      213: 3489613026915365764
+    second: pikach2_30
+  - first:
+      213: 9085205566704559288
+    second: pikach2_31
+  - first:
+      213: 7171694695851781370
+    second: pikach2_32
+  - first:
+      213: -8887802936689041215
+    second: pikach2_33
+  - first:
+      213: 1936716317575071834
+    second: pikach2_34
+  - first:
+      213: 8169829453896540740
+    second: pikach2_35
+  - first:
+      213: -8478652283977578072
+    second: pikach2_36
+  - first:
+      213: 7215740844010437069
+    second: pikach2_37
+  - first:
+      213: -1617998175007628748
+    second: pikach2_38
+  - first:
+      213: 4769850463096100900
+    second: pikach2_39
+  - first:
+      213: -7292324608766142448
+    second: pikach2_40
+  - first:
+      213: -8817055582788224711
+    second: pikach2_41
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pikach2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 510
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8b7248f8033453dac3ee266c23302d
+      internalID: 7621244327755752613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fbb8e38b5505e40cd899d66d73876c52
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
