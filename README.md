@@ -25,6 +25,13 @@ Unity Learning: UGUI
 
 
 
+### Grid Layout Group (Script)
+
+- Layout - Grid Layout Group 表格布局
+- 自动排列，控制子元素的大小和位置，子元素不能更改。
+
+
+
 ### UGUI Draw Call 优化
 
 #### 优化原理
@@ -33,7 +40,7 @@ Unity Learning: UGUI
 
 - 一张 Image Source 用于不同的 Image Component （即一张图片使用多次）只调用一次 Draw Call：CPU 找图片的顶点信息、坐标和像素交给 GPU 做渲染。
 
-#### 精灵打包
+#### 精灵打包CC
 
 做界面时使用小图，在项目发布时引擎会根据精灵 Packing Tag 自动将小图合并在一张大图集中，从而减少 Draw Calls，减少 GPU 物体次数。
 
@@ -72,3 +79,24 @@ Sprite Editor  - Type：Grid By Cell Size
 ##### 按格子数目切割 Sprite
 
 Sprite Editor  - Type：Grid By Cell Count
+
+
+
+### 2048
+
+#### 1 创建 4 * 4 方格
+
+1. 创建 GameController 脚本，用于控制游戏逻辑（生成方格）。
+2. 创建 NumberSprite 脚本， 用于定义 Sprite 行为（设置图片……）。
+3. 创建 ResourceManager 类，用于读取资源（根据名称加载 Sprite）。
+
+#### 2 生成新数字
+
+#### 3 更新界面
+
+#### 4 获取输入，移动地图
+
+
+
+
+
