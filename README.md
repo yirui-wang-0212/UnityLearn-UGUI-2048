@@ -40,7 +40,7 @@ Unity Learning: UGUI
 
 - 一张 Image Source 用于不同的 Image Component （即一张图片使用多次）只调用一次 Draw Call：CPU 找图片的顶点信息、坐标和像素交给 GPU 做渲染。
 
-#### 精灵打包CC
+#### 优化方法1：精灵打包
 
 做界面时使用小图，在项目发布时引擎会根据精灵 Packing Tag 自动将小图合并在一张大图集中，从而减少 Draw Calls，减少 GPU 物体次数。
 
@@ -55,30 +55,29 @@ Unity Learning: UGUI
 4. Windows - Sprite Packer 中能看到打完包的大图。
 5. 查看 Stats 界面中的 Batches，发现变小。
 
-#### 图集
+#### 优化方法2：图集
 
 美工制作图片时，尽量将需要在同个界面显示的小图做到一张大图中。
 
-##### 手动切割 Sprite
+- **手动切割 Sprite**
+  1. Inspector - Sprite Mode：Multiple
+  2. 点击 Inspector - Sprite Editor
+  3. 在 Sprite Editor 窗口中每切完一张图片之后点击 Apply
+  4. 切好的图片便会在 Assets 中原图下面
 
-1. Inspector - Sprite Mode：Multiple
-2. 点击 Inspector - Sprite Editor
-3. 在 Sprite Editor 窗口中每切完一张图片之后点击 Apply
-4. 切好的图片便会在 Assets 中原图下面
+- **自动切割 Sprite**
 
-##### 自动切割 Sprite
+  （判断 阿尔法 通道）
 
-（判断 阿尔法 通道）
+  Sprite Editor  - Type：Automatic
 
-Sprite Editor  - Type：Automatic
+- **按格子大小切割 Sprite**
 
-##### 按格子大小切割 Sprite
+  Sprite Editor  - Type：Grid By Cell Size
 
-Sprite Editor  - Type：Grid By Cell Size
+- **按格子数目切割 Sprite**
 
-##### 按格子数目切割 Sprite
-
-Sprite Editor  - Type：Grid By Cell Count
+  Sprite Editor  - Type：Grid By Cell Count
 
 
 
