@@ -97,5 +97,43 @@ Unity Learning: UGUI
 
 
 
+#### 其他
+
+- 可空值类型
+
+```c#
+private Random random;
+/// <summary>
+/// 生成新数字
+/// </summary>
+public void GenerateNumber(out Location? loc,out int? newNumber)
+{
+    CalculateEmpty();
+
+    if (emptyLOC.Count > 0)
+    {
+        int emptyLocIndex = random.Next(0, emptyLOC.Count);//0,15
+
+        loc = emptyLOC[emptyLocIndex];//有空位置的list  3
+
+        newNumber = map[loc.Value.RIndex, loc.Value.CIndex] = random.Next(0, 10) == 1 ? 4 : 2;
+
+        //将该位置清除
+        emptyLOC.RemoveAt(emptyLocIndex);
+    }
+    else
+    {
+        // int? 是c#的可空值类型，可以给它赋 null
+        // int? a = null;
+        // int? 不再是原来的值类型， 如果需要获取值类型数据，使用 a.Value
+        newNumber = null;
+        loc = null;
+    }
+}
+```
 
 
+
+
+
+ß

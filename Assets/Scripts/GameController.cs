@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Console2048;
 
 public class GameController : MonoBehaviour
 {
+    // 游戏算法类对象
+    private GameCore core;
+
     // Start is called before the first frame update
     void Start()
     {
+        // 创建游戏算法类对象
+        core = new GameCore();
+
         Init();
     }
 
@@ -39,5 +46,17 @@ public class GameController : MonoBehaviour
         // 3. 设置当前 GameObject：GameController 为创建对象的父节点
         // 创建的游戏对象时 scale 默认为 1，false 表示不使用世界坐标，1 表示相对于父节点
         go.transform.SetParent(this.transform, false);
+    }
+
+    // 随机生成 2 或 4
+    private void  GenerateNewNumber(){
+
+        // 用于存储返回的位置
+        Location? loc;
+        // 用于存储返回的数字
+        int? number;
+
+        // 调用 GameCore 中生成 2 或 4 的代码
+        core.GenerateNumber(out loc, out number);
     }
 }
