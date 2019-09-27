@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         // 在 4 * 4 的 GameObject 上添加 NumberSprite 脚本组件：用于 Sprite 的行为
         // Awake 立即执行（创建之后立即执行），Start 下一帧执行，
         // 因为在当前脚本中的 Start 会调用当前函数，并且在下一行的 action.SetImage(0); 会访问 NumberSprite 中的 image 并对其进行修改，
-        // 所以在 NumberSprite.cs 中 image = GetComponent<Image>(); 应该写在 Awake 中 而不是 Starr 中。
+        // 所以在 NumberSprite.cs 中 image = GetComponent<Image>(); 应该写在 Awake 中 而不是 Start 中。
         NumberSprite action = go.AddComponent<NumberSprite>(); 
         // 设置初始图片，没有数字的图片
         action.SetImage(0);
