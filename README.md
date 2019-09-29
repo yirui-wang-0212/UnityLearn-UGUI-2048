@@ -91,6 +91,20 @@ Unity Learning: UGUI
 
 #### 2 生成新数字
 
+1. 导入算法类：GameCore、Location、MoveDirection。
+
+2. 修改算分类 GameCore 中生成数字方法（返回位置与数字）。
+
+   GenerateNumber() --> GenerateNumber(out Location? loc,out int? newNumber)
+
+3. 在 GameController 脚本中，添加生成新数字方法。
+
+   修改创建精灵方法 CreateSripte（创建精灵时，存储精灵行为脚本的引用）。
+
+   （存储创建的 NumberSprite 脚本类 Component 对象的引用，在每个对象创建后立即存入）
+
+4. 在 Init() 中调用两次 GenerateNewNumber()，作为游戏开始时界面上的两个数字。
+
 #### 3 更新界面
 
 #### 4 获取输入，移动地图

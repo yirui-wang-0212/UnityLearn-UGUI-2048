@@ -7,9 +7,10 @@ using Console2048;
 public class GameController : MonoBehaviour
 {
     // 游戏算法类对象
+    // 用于使用 GameCore 类中的算法
     private GameCore core;
     // 2维精灵行为类数组（4*4）
-    // 存储创建的 NumberSprite 脚本类 Component 的引用，创建后存入
+    // 用于存储创建的 NumberSprite 脚本类 Component 的引用，创建后存入
     // 方便游戏中更改其 image （2，4，8，16，……）
     private NumberSprite[,] spriteActionArray;
 
@@ -18,7 +19,7 @@ public class GameController : MonoBehaviour
     {
         // 创建游戏算法类对象
         core = new GameCore();
-        // 创建2维精灵行为类数组（4*4）ß
+        // 创建2维精灵行为类数组（4*4）
         spriteActionArray = new NumberSprite[4, 4];
 
         Init();
@@ -51,7 +52,8 @@ public class GameController : MonoBehaviour
         // 因为在当前脚本中的 Start 会调用当前函数，并且在下一行的 action.SetImage(0); 会访问 NumberSprite 中的 image 并对其进行修改，
         // 所以在 NumberSprite.cs 中 image = GetComponent<Image>(); 应该写在 Awake 中 而不是 Start 中。
         NumberSprite action = go.AddComponent<NumberSprite>(); 
-        // 将引用存储到2维精灵行为类数组（4*4）中
+        // 将引用存储到2维精灵行为类数组（4*4）中，
+        // 即存储 NumberSprite 脚本类 Component 的引用
         spriteActionArray[r,c] = action;
         // 设置初始图片，没有数字的图片
         action.SetImage(0);

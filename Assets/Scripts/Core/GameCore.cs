@@ -191,6 +191,33 @@ namespace Console2048
 
         }
 
+        // 旧方法
+        // private Random random;
+        // /// <summary>
+        // /// 生成新数字
+        // /// </summary>
+        // public void GenerateNumber(out Location loc,out int newNumber)
+        // {
+        //     CalculateEmpty();
+
+        //     if (emptyLOC.Count > 0)
+        //     {
+        //         int emptyLocIndex = random.Next(0, emptyLOC.Count);//0,15
+
+        //         loc = emptyLOC[emptyLocIndex];//有空位置的list  3
+
+        //         newNumber = map[loc.RIndex, loc.CIndex] = random.Next(0, 10) == 1 ? 4 : 2;
+
+        //         //将该位置清除
+        //         emptyLOC.RemoveAt(emptyLocIndex);
+        //     }
+        //     else
+        //     {
+        //         newNumber = -1;
+        //         loc = new Location(-1, -1);
+        //     }
+        // }
+
         private Random random;
         /// <summary>
         /// 生成新数字
