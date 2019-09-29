@@ -131,9 +131,3 @@ public void GenerateNumber(out Location? loc,out int? newNumber)
     }
 }
 ```
-
-
-
-
-
-ß
