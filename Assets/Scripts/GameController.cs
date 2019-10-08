@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Console2048;
+using UnityEngine.EventSystems;
+using MoveDirection = Console2048.MoveDirection;
 
-public class GameController : MonoBehaviour
-{
+public class GameController : MonoBehaviour, IPointerDownHandler, IDragHandler{
+
     // 游戏算法类对象
     // 用于使用 GameCore 类中的算法
     private GameCore core;
@@ -14,7 +16,7 @@ public class GameController : MonoBehaviour
     // 方便游戏中更改其 image （2，4，8，16，……）
     private NumberSprite[,] spriteActionArray;
 
-    // Start is called before the first framße update
+    // Start is called before the first frame update
     void Start()
     {
         // 创建游戏算法类对象
@@ -75,5 +77,78 @@ public class GameController : MonoBehaviour
         core.GenerateNumber(out loc, out number);
         // 根据位置获取精灵行为脚本对象引用
         spriteActionArray[loc.Value.RIndex, loc.Value.CIndex].SetImage(number.Value);
+    }
+
+    private void Update(){
+
+        // 如果地图有更新
+        if(core.IsChange){
+            // 更新界面
+            UpdateMap();
+            // 产生新数字
+            GenerateNewNumber();
+            // 判断游戏是否结束
+
+            core.IsChange = false;
+        }
+    }
+
+    // 根据游戏核心算法类中存储 Map（4*4）更新 spriteActionArray（4*4）
+    // 使得玩家操作并计算后的 4*4 得以更新到游戏界面
+    private void UpdateMap(){
+
+        for (int r = 0; r < 4; ++r){
+            for (int c = 0; c < 4; ++c){
+                spriteActionArray[r, c].SetImage(core.Map[r, c]);
+            }
+        }
+    }
+
+    // 以下是输入逻辑：移动操作的代码
+
+    // 记录按下时的位置
+    private Vector3 startPoint;
+    // 记录是否按下
+    private bool isDown = false;
+
+    // 当按下当前 GameObject 时执行
+    public void OnPointerDown(PointerEventData eventData){
+        // 记录按下时的位置
+        startPoint = eventData.position;
+        // 记录按下
+        isDown = true;
+    }
+
+    // 当按下拖拽时每帧执行
+    public void OnDrag(PointerEventData eventData){
+
+        // 如果 isDown == false 不做以下操作
+        if (isDown == false) return;
+
+        Vector2 offset = eventData.position - (Vector2)startPoint;
+        float x = Mathf.Abs(offset.x);
+        float y = Mathf.Abs(offset.y);
+
+        MoveDirection? dir = null;
+        // x > y 判断为是水平方向移动
+        // x >= 50 是一个阈值，如果移动的距离小于 50 像素，则判定为无效输入，不执行操作
+        if(x > y && x >= 50){
+            // 判断左移还是右移
+            dir = offset.x > 0 ? MoveDirection.Right : MoveDirection.Left;
+        }
+
+        // x < y 判断为是垂直方向移动
+        // y >= 50 是一个阈值，如果移动的距离小于 50 像素，则判定为无效输入，不执行操作
+        if(x < y && y >= 50){
+            // 判断上移还是下移
+            dir = offset.y > 0 ? MoveDirection.Up : MoveDirection.Left;
+        }
+
+        if (dir != null){
+            // 进行移动操作
+            core.Move(dir.Value);
+            // 将 isDown 置为 false，防止拖动的时候每帧都执行
+            isDown = false;
+        }
     }
 }
